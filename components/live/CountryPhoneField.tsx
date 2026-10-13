@@ -84,8 +84,9 @@ export function CountryPhoneField({ onChange }: { onChange: () => void }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
-  const filtered = countries.filter(({ name, dial }) =>
-    `${name} ${dial}`.toLowerCase().includes(query.trim().toLowerCase()),
+  const search = query.trim().toLowerCase();
+  const filtered = countries.filter(({ name, dial, code }) =>
+    [name, dial, code].some((value) => value.toLowerCase().includes(search)),
   );
 
   const closeAndFocus = () => {

@@ -51,6 +51,10 @@ function collectInvalidFields(
   return invalid;
 }
 
+function isCountrySearch(target: EventTarget | null) {
+  return target instanceof Element && Boolean(target.closest(".contact-country-search"));
+}
+
 export function LiveContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [state, setState] = useState<FormState>("idle");
@@ -84,10 +88,12 @@ export function LiveContactForm() {
   useEffect(() => {
     const form = formRef.current;
     if (!form) return;
-    const sync = () => syncValidation();
+    const sync = (event: Event) => {
+      if (!isCountrySearch(event.target)) syncValidation();
+    };
     form.addEventListener("input", sync);
     form.addEventListener("change", sync);
-    sync();
+    syncValidation();
     return () => {
       form.removeEventListener("input", sync);
       form.removeEventListener("change", sync);
@@ -181,8 +187,8 @@ export function LiveContactForm() {
       data-form-state={state}
       data-form-valid={isValid || undefined}
       noValidate
-      onInput={() => syncValidation()}
-      onChange={() => syncValidation()}
+      onInput={(event) => { if (!isCountrySearch(event.target)) syncValidation(); }}
+      onChange={(event) => { if (!isCountrySearch(event.target)) syncValidation(); }}
       onSubmit={submit}
     >
       <img
