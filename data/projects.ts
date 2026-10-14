@@ -81,7 +81,13 @@ export type Project = {
 
 export type ProjectListing = Pick<
   Project,
-  "slug" | "title" | "listing" | "tags" | "category" | "region" | "showOnHomepage"
+  | "slug"
+  | "title"
+  | "listing"
+  | "tags"
+  | "category"
+  | "region"
+  | "showOnHomepage"
 > & {
   externalUrl?: string;
   hasDetailsPage?: boolean;
@@ -115,6 +121,8 @@ export const LEANIER_PROJECT_IMAGE = "/assets/projects/leanier/Leanier app.png";
 
 export const REBORN_PACKAGING_PROJECT_IMAGE =
   "/assets/projects/reborn-packaging/Reborn packaging.png";
+
+export const MEDITRUST_PROJECT_IMAGE = "/assets/projects/meditrust/heroImg.png";
 
 export const projects = [
   {
@@ -2217,6 +2225,212 @@ export const projects = [
     gallery: [],
   },
   {
+    slug: "meditrust",
+    title:
+      "MediTrust — Custom Ecommerce Development for a Multivendor Medical Equipment Marketplace",
+    showOnHomepage: false,
+    detailLayout: "figma-longform",
+    industry: ["Healthcare", "Ecommerce", "Medical Equipment Marketplace"],
+    serviceCategory: [
+      "WordPress Development",
+      "WooCommerce Development",
+      "Multivendor Marketplace Development",
+    ],
+    servicesProvided: [],
+    scopeOfWork: [
+      "WordPress Development",
+      "WooCommerce Integration",
+      "Dokan Customization",
+      "Custom Vendor Dashboard",
+      "Product Specification System",
+      "Product Inquiry System",
+      "Vendor Store Customization",
+      "Medical Directory Development",
+    ],
+    liveUrl: "https://meditrustintbd.com/",
+    summary:
+      "MediTrust International is a Bangladesh-based multivendor medical equipment marketplace designed to connect medical suppliers with hospitals, clinics, healthcare institutes, and individual buyers.",
+    showInFeaturedSliders: false,
+    heroImage: MEDITRUST_PROJECT_IMAGE,
+    heroAspectRatio: "916 / 639",
+    problems: "",
+    solutions: [],
+    showcase: [],
+    detailBlocks: [
+      {
+        type: "copy",
+        title: "About the Project",
+        paragraphs: [
+          "MediTrust International is a Bangladesh-based multivendor medical equipment marketplace designed to connect medical suppliers with hospitals, clinics, healthcare institutes, and individual buyers.",
+          "Our role went far beyond installing WordPress, WooCommerce, and Dokan. We developed and customized the platform around MediTrust’s specific business requirements, extending the standard marketplace functionality with custom vendor profiles, storefront information, customer account experiences, medical product specifications, inquiry workflows, directory features, and vendor dashboard functionality.",
+          "The result is a purpose-built medical ecommerce platform where suppliers can manage their businesses and products while buyers can discover equipment, evaluate supplier information, submit inquiries, and access useful healthcare resources from one system.",
+        ],
+      },
+      {
+        type: "copy",
+        title: "Problems",
+        paragraphs: [
+          "A standard WooCommerce and Dokan installation could not support many of the workflows required for a medical equipment marketplace.",
+        ],
+        bullets: [
+          "Standard WooCommerce product fields were not sufficient for detailed medical equipment specifications.",
+          "Dokan’s default vendor profile and store interface did not provide all the supplier information required by MediTrust.",
+          "High-value medical equipment often requires an inquiry or quotation process instead of normal direct checkout.",
+          "Vendor and customer account experiences needed additional custom information and functionality.",
+          "Suppliers needed more structured storefronts to present their company and medical products professionally.",
+          "Medical buyers needed access to product details such as brand, origin, warranty, availability, and technical specifications.",
+          "The platform needed additional healthcare directories and information beyond normal ecommerce functionality.",
+          "Vendor workflows had to remain manageable without giving suppliers access to the WordPress admin area.",
+        ],
+      },
+      {
+        type: "copy",
+        title: "Challenges",
+        groups: [
+          {
+            title: "Marketplace & Vendor Challenges",
+            bullets: [
+              "Extending the Dokan vendor dashboard with custom functionality and frontend interfaces",
+              "Building custom vendor profile and shop-detail fields around MediTrust’s business requirements",
+              "Maintaining a consistent vendor experience across account, product, profile, and store-management screens",
+              "Supporting supplier-specific information without exposing WordPress backend complexity",
+            ],
+          },
+          {
+            title: "Product Development Challenges",
+            bullets: [
+              "Creating custom medical equipment specification fields beyond standard WooCommerce attributes",
+              "Presenting technical product information consistently across many equipment categories",
+              "Supporting products where pricing may be unavailable or quotation-based",
+              "Building a custom product inquiry workflow appropriate for medical equipment purchasing",
+            ],
+          },
+          {
+            title: "Customer & Directory Challenges",
+            bullets: [
+              "Extending the normal customer profile with project-specific functionality",
+              "Building healthcare directory features outside the standard WooCommerce product system",
+              "Structuring supplier, healthcare institute, ambulance, blood-bank, and related directory information",
+              "Keeping complex marketplace and directory functionality usable across desktop and mobile",
+            ],
+          },
+        ],
+      },
+      {
+        type: "image",
+        image: "/assets/projects/meditrust/bodyImg.png",
+        alt: "MediTrust medical product details and marketplace catalog screens",
+        aspectRatio: "916 / 639",
+      },
+      {
+        type: "copy",
+        title: "Our Solutions",
+        bullets: [
+          {
+            lead: "Custom Vendor Profile System:",
+            body: " Extended vendor profiles with MediTrust-specific supplier information and frontend presentation.",
+          },
+          {
+            lead: "Custom Vendor Store Details:",
+            body: " Built additional storefront information and layouts so medical suppliers can present their businesses professionally within the marketplace.",
+          },
+          {
+            lead: "Customized Dokan Dashboard:",
+            body: " Extended and customized the vendor dashboard to support the workflows required by MediTrust while keeping vendors inside a controlled frontend environment.",
+          },
+          {
+            lead: "Custom Customer Profile:",
+            body: " Developed additional customer-profile functionality instead of relying only on the default WooCommerce account experience.",
+          },
+          {
+            lead: "Custom Medical Product Specifications:",
+            body: " Added structured product specification functionality for medical equipment attributes, brand information, origin, warranty, availability, and other product-specific data.",
+          },
+          {
+            lead: "Custom Product Inquiry System:",
+            body: " Built the inquiry functionality with custom code to support quotation-based and high-value medical equipment purchases without depending on an additional inquiry plugin.",
+          },
+          {
+            lead: "WooCommerce Marketplace Integration:",
+            body: " Integrated product catalog, categories, vendor products, customer accounts, and ecommerce workflows into a unified system.",
+          },
+          {
+            lead: "Dokan Multivendor Integration:",
+            body: " Used Dokan for the core marketplace infrastructure while extending its limitations through project-specific custom development.",
+          },
+          {
+            lead: "Healthcare Directory Development:",
+            body: " Developed directory functionality for suppliers, healthcare institutes, ambulance services, blood banks, and other useful listings.",
+          },
+          {
+            lead: "Custom Frontend Components:",
+            body: " Built project-specific frontend interfaces, forms, navigation, profile sections, product information layouts, and dashboard components.",
+          },
+          {
+            lead: "Responsive Development:",
+            body: " Optimized marketplace, vendor dashboard, profiles, product pages, directories, and account interfaces for desktop, tablet, and mobile.",
+          },
+        ],
+      },
+      {
+        type: "copy",
+        title: "Technology & Development Approach",
+        paragraphs: ["The platform was developed primarily using:"],
+        bullets: [
+          "WordPress",
+          "WooCommerce",
+          "Dokan Multivendor",
+          "PHP",
+          "WordPress hooks and filters",
+          "Custom WordPress functionality",
+          "Custom frontend JavaScript",
+          "HTML/CSS",
+          "Custom dashboard and profile interfaces",
+        ],
+        closingParagraphs: [
+          "Instead of solving every requirement with another plugin, we kept the core stack focused and implemented project-specific functionality through custom development where the standard WordPress, WooCommerce, or Dokan features were insufficient.",
+          "This approach gave MediTrust greater control over its workflows and reduced dependence on unrelated third-party plugin functionality.",
+        ],
+      },
+      {
+        type: "copy",
+        title: "The Final Result",
+        paragraphs: [
+          "MediTrust International now operates as a customized medical equipment marketplace rather than a standard WooCommerce store.",
+        ],
+        bulletsLabel: "The completed platform provides:",
+        bullets: [
+          "A multivendor marketplace where medical suppliers can manage and showcase their products",
+          "Customized vendor profiles and storefront information",
+          "A tailored vendor dashboard for supplier operations",
+          "Structured medical equipment specifications",
+          "Custom product inquiry functionality for quotation-based purchases",
+          "Extended customer account functionality",
+          "Healthcare and supplier directory features",
+          "Responsive marketplace and dashboard interfaces",
+          "A WordPress-based system that the MediTrust team can manage and expand as the platform grows",
+        ],
+        closingParagraphs: [
+          "By combining WooCommerce and Dokan with substantial custom WordPress development, we were able to create a platform aligned with MediTrust’s actual business processes instead of forcing those processes into the limitations of an off-the-shelf marketplace setup.",
+          "The project demonstrates how WordPress and WooCommerce can be extended through custom development to support a specialized, scalable multivendor marketplace for the healthcare industry.",
+        ],
+      },
+    ],
+    tags: [
+      "WordPress Development",
+      "WooCommerce Development",
+      "Multivendor Marketplace",
+      "Healthcare",
+    ],
+    category: "WordPress Development",
+    region: "",
+    year: "",
+    listing: MEDITRUST_PROJECT_IMAGE,
+    relatedImage: MEDITRUST_PROJECT_IMAGE,
+    cover: MEDITRUST_PROJECT_IMAGE,
+    gallery: [],
+  },
+  {
     slug: "leanier",
     title: "Leanier — UI/UX Design for a Lean-Thinking Productivity App",
     showOnHomepage: false,
@@ -2347,7 +2561,12 @@ export const leadfexProject = {
   slug: "leadfex",
   title: "LeadFex — B2B Lead Generation Website Design",
   listing: "/images/work/Leadfex.png",
-  tags: ["UI/UX Design", "Website Design", "Landing Page Design", "SaaS Website"],
+  tags: [
+    "UI/UX Design",
+    "Website Design",
+    "Landing Page Design",
+    "SaaS Website",
+  ],
   category: "Website Design",
   region: "",
   showOnHomepage: false,
