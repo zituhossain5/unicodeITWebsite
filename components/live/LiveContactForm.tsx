@@ -12,6 +12,7 @@ import {
 } from "react";
 import { createContactMotion } from "@/components/motion/contact-motion";
 import { contactServiceOptions } from "@/lib/contact-form-options";
+import { getContactAttribution } from "@/lib/contact-attribution";
 import { CountryPhoneField } from "./CountryPhoneField";
 import { RollingPrimaryButton } from "./RollingPrimaryButton";
 
@@ -127,7 +128,11 @@ export function LiveContactForm() {
     }
 
     setState("sending");
-    const body = Object.fromEntries(new FormData(form));
+    const body = {
+      ...Object.fromEntries(new FormData(form)),
+      ...getContactAttribution(),
+      sourceUrl: window.location.href,
+    };
     try {
       const response = await fetch("/api/contact", {
         method: "POST",

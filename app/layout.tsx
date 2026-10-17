@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { MotionProvider } from "@/components/MotionProvider";
+import { ContactAttribution } from "@/components/ContactAttribution";
 import { LiveHeader } from "@/components/live/LiveHeader";
 import { LiveFooter } from "@/components/live/LiveShared";
 import "./globals.css";
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body>
         <LiveHeader />
         <MotionProvider />
+        <ContactAttribution />
         {children}
         <LiveFooter />
       </body>
