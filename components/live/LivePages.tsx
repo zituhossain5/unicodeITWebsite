@@ -9,7 +9,6 @@ import {
   LiveButton,
   LiveTitle,
   ScaleCTA,
-  Testimonials,
 } from "./LiveShared";
 import { LiveFeaturedWorks } from "./LiveFeaturedWorks";
 import { LiveAllWorks } from "./LiveAllWorks";
@@ -70,15 +69,12 @@ export function WorksPageLive() {
 }
 
 export function PricingPageLive() {
-  const showPricingTestimonials = false;
-
   return (
     <main className="live-pricingPage">
       <div className="live-innerTop">
         <PricingSection route />
       </div>
       <Benefits route />
-      {showPricingTestimonials && <Testimonials />}
       <FAQ />
       <ScaleCTA />
     </main>

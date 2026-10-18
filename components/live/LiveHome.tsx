@@ -4,7 +4,6 @@ import {
   type ComparisonValue,
 } from "@/lib/comparison-data";
 import { livePricing, liveServices, whatsappLink } from "@/lib/live-data";
-import { LivePricingQuote } from "./LivePricingQuote";
 import { LiveProjectShowcase } from "./LiveProjectShowcase";
 import { LiveSelectedWorks } from "./LiveSelectedWorks";
 import {
@@ -984,7 +983,6 @@ export function PricingSection({ route = false }: { route?: boolean }) {
             ))}
           </div>
         )}
-        {route ? <LivePricingQuote /> : null}
       </div>
     </section>
   );
