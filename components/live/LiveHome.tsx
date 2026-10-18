@@ -19,16 +19,16 @@ import { TechnologyStack } from "./TechnologyStack";
 import { ContactHeroSection } from "./LiveContactHero";
 
 export const PARTNER_LOGOS = [
-  { name: "Dropcall", src: "/assets/brand/dropcall-logo.png" },
-  { name: "FormGent", src: "/assets/brand/FormGent-logo.png" },
-  { name: "HelpGent", src: "/assets/brand/helpgent-logo.png" },
-  { name: "LeadFex", src: "/assets/brand/LeadFex_Logo.png" },
-  { name: "Offcoustic", src: "/assets/brand/offcoustic-logo.png" },
-  { name: "Pentillo", src: "/assets/brand/pentillo-logo.png" },
-  { name: "Riptide", src: "/assets/brand/riptide-logo.png" },
-  { name: "Storyteq", src: "/assets/brand/Storyteq_Logo.png" },
-  { name: "Synthesia", src: "/assets/brand/synthesia-logo.png" },
-  { name: "Waymark", src: "/assets/brand/Waymark-logo.png" },
+  { name: "Directorist", src: "/images/clients/directorist.svg" },
+  { name: "Reborn Packaging", src: "/images/clients/reborn.svg" },
+  { name: "FormGent", src: "/images/clients/formgent.svg" },
+  { name: "LeadFex", src: "/images/clients/leadfex.svg" },
+  { name: "HelpGent", src: "/images/clients/helpgent.svg" },
+  { name: "Leanier", src: "/images/clients/leanier.svg" },
+  { name: "OneListing", src: "/images/clients/oneListing.svg" },
+  { name: "Templatiq", src: "/images/clients/Templatiq.svg" },
+  { name: "Al Quran", src: "/images/clients/alQuran.svg" },
+  { name: "MediTrust", src: "/images/clients/meditrust.svg" },
 ] as const;
 
 type PartnerLogo = (typeof PARTNER_LOGOS)[number];

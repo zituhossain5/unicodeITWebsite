@@ -1291,6 +1291,9 @@ span.fix-partnerCopy {
   max-width: none;
   object-fit: contain;
 }
+.fix-partnerLogoCell img[src$="/reborn.svg"] {
+  height: 60px;
+}
 .fix-partnerRails {
   position: relative;
   z-index: 3;

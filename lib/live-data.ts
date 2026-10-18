@@ -225,66 +225,47 @@ export type LiveTeamMember = {
   name: string;
   role: string;
   portrait: string;
-  links: {
-    instagram: string;
-    x: string;
-    linkedin: string;
-  };
 };
-
-const teamLinks = {
-  instagram: "https://instagram.com/",
-  x: "https://x.com/",
-  linkedin: "https://linkedin.com/",
-} as const;
 
 export const liveTeam: readonly LiveTeamMember[] = [
   {
     name: "Alex Sameni",
     role: "Cofounder",
     portrait: "/assets/live/Ow5uP2GsY6Pb5iLhJWLgwW3L6I.png",
-    links: teamLinks,
   },
   {
     name: "Paul Johnson",
     role: "Cofounder",
     portrait: "/assets/live/PiSLZ9hYjm5LPW10dYS7Wo9I.png",
-    links: teamLinks,
   },
   {
     name: "Emily Cole",
     role: "Product Designer",
     portrait: "/assets/live/7AnuLUsWlaYUhFeMcOAue3I9g.png",
-    links: teamLinks,
   },
   {
     name: "Liam Foster",
     role: "Frontend Developer",
     portrait: "/assets/live/cNuIqk17JCcsQ1vlxxuBd1XL9d0.png",
-    links: teamLinks,
   },
   {
     name: "Lucas Meyer",
     role: "Motion Designer",
     portrait: "/assets/live/HV8sExcKkE07O3LPnLQqXeYJjc.png",
-    links: teamLinks,
   },
   {
     name: "Chloe Laurent",
     role: "Project Manager",
     portrait: "/assets/live/iqFKNaD7Ng6kt39JY4ikK8yuLI.png",
-    links: teamLinks,
   },
   {
     name: "Alex Roy",
     role: "UI Designer",
     portrait: "/assets/live/7qwUXqAZmyqdG1eENimWt7cUD4.png",
-    links: teamLinks,
   },
   {
     name: "Ben Johns",
     role: "UI Designer",
     portrait: "/assets/live/jgJSSH9oenHiziC1jk5wi8eBrwg.png",
-    links: teamLinks,
   },
 ] as const;

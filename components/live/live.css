@@ -1336,10 +1336,6 @@
   color: #777;
   margin: 0;
 }
-.live-team a {
-  font: 500 10px var(--mono);
-  color: var(--brand);
-}
 .live-culture {
   padding: 110px max(4.2vw, 28px);
   background: #080808;
@@ -5933,9 +5929,8 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
   .live-thinkers {
     position: relative;
     width: 680px;
-    min-height: 760px;
     margin: 0 auto;
-    padding: 58px 58px 0;
+    padding: 58px;
     border: 1px solid #303030;
     border-radius: 25px;
     background: linear-gradient(145deg, #111, #080808);
@@ -5952,47 +5947,6 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
     font-size: 15px;
     line-height: 1.55;
   }
-  .live-thinkers footer {
-    height: 128px;
-    margin: 35px -58px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid #2b2b2b;
-  }
-  .live-thinkers footer span {
-    padding: 28px 58px;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #2b2b2b;
-  }
-  .live-thinkers footer span:last-child {
-    border-right: 0;
-  }
-  .live-thinkers footer i {
-    font-family: cursive;
-    font-size: 20px;
-  }
-  .live-thinkers footer small {
-    margin-top: 5px;
-    color: #777;
-  }
-  .live-thinkerPen,
-  .live-thinkerBolt {
-    position: absolute;
-    color: var(--brand);
-    font-style: normal;
-    font-size: 55px;
-  }
-  .live-thinkerPen {
-    left: -82px;
-    top: 245px;
-    transform: rotate(-22deg);
-  }
-  .live-thinkerBolt {
-    right: -88px;
-    top: -38px;
-  }
-
   .live-team {
     width: 100%;
     height: 1179.969px;
@@ -6012,22 +5966,12 @@ html[data-motion="paused"] .live-testimonialHeartWhite {
     border-radius: 0;
     background: #141414;
   }
-  .live-team article img {
-    opacity: 0;
-    transition: opacity 0.8s cubic-bezier(0.44, 0, 0.56, 1);
-  }
-  .live-team article:hover img {
-    opacity: 1;
-  }
   .live-team h3 {
     font-size: 26px;
     margin-top: 13px;
   }
   .live-team p {
     font-size: 13px;
-  }
-  .live-team a {
-    font-size: 9px;
   }
 
   .live-culture {
@@ -9131,7 +9075,6 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
 .live-foundingGlow,
 .live-founderSurface,
 .live-thinkersSurface,
-.live-thinkerPhoto,
 .live-teamEdgeLeft,
 .live-teamEdgeRight,
 .live-teamRuler,
@@ -9156,18 +9099,6 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
   letter-spacing: -1.2px;
   text-transform: uppercase;
 }
-.live-founderSignature {
-  width: 241px;
-  height: 40px;
-  fill: none;
-  stroke: #666;
-  stroke-width: 1.15;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.live-teamSocialIcon {
-  display: block;
-}
 
 @media (min-width: 1200px) {
   .live-aboutHero:before,
@@ -9183,7 +9114,6 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
   .live-foundingGlow,
   .live-founderSurface,
   .live-thinkersSurface,
-  .live-thinkerPhoto,
   .live-teamEdgeLeft,
   .live-teamEdgeRight,
   .live-teamRuler,
@@ -9541,7 +9471,6 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
   }
   .live-thinkers {
     width: 690px;
-    min-height: 804px;
     padding: 0;
     border: 1px solid #303030;
     border-radius: 28px;
@@ -9564,9 +9493,7 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
   .live-thinkerCopy {
     position: relative;
     z-index: 2;
-    height: 758px;
-    padding: 56px 54px 28px;
-    overflow: hidden;
+    padding: 56px 54px;
   }
   .live-thinkers h3 {
     margin: 0 0 40px;
@@ -9581,91 +9508,6 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
     font: 500 17px/25.5px var(--sans);
     letter-spacing: -0.17px;
   }
-  .live-thinkers footer {
-    position: relative;
-    z-index: 2;
-    height: 198px;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid #292929;
-  }
-  .live-thinkers footer span {
-    padding: 34px 52px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-right: 1px solid #292929;
-  }
-  .live-thinkers footer span:last-child {
-    border-right: 0;
-  }
-  .live-thinkers footer b {
-    margin-top: 8px;
-    color: #fff;
-    font: 600 17px/20.4px var(--sans);
-    letter-spacing: -0.34px;
-  }
-  .live-thinkers footer small {
-    margin-top: 5px;
-    color: #aaa;
-    font: 500 15px/22.5px var(--sans);
-  }
-  .live-thinkerPen,
-  .live-thinkerBolt {
-    position: absolute;
-    z-index: 5;
-    display: block;
-    overflow: visible;
-  }
-  .live-thinkerPen {
-    left: -106px;
-    top: 230px;
-    width: 130px;
-    height: 100px;
-    transform: rotate(-11deg);
-  }
-  .live-thinkerBolt {
-    right: -99px;
-    top: -76px;
-    width: 183px;
-    height: 140.5px;
-    transform: rotate(16deg);
-  }
-  .live-thinkerPhoto {
-    position: absolute;
-    z-index: 1;
-    width: 257px;
-    height: 327px;
-    filter: drop-shadow(0 35px 22px rgba(1, 43, 37, 0.68));
-    pointer-events: none;
-  }
-  .live-thinkerPhoto > img:first-child {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .live-thinkerPhoto > img:last-child {
-    position: absolute;
-    left: 15px;
-    top: -37px;
-    width: 159px;
-    height: 195px;
-    object-fit: contain;
-  }
-  .live-thinkerPhotoLeft {
-    left: -249px;
-    top: 317px;
-    transform: rotate(-11deg);
-  }
-  .live-thinkerPhotoRight {
-    right: -177px;
-    top: 402px;
-    transform: translateY(-163.5px) rotate(10deg);
-  }
-
   .live-team {
     position: relative;
     padding: 100px 0 2px;
@@ -9775,7 +9617,6 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
     border-radius: 0 !important;
     background: linear-gradient(180deg, transparent, #151515 50%) !important;
     overflow: hidden !important;
-    transition: opacity 0.4s cubic-bezier(0.44, 0, 0.56, 1);
   }
   .live-teamGrid h3 {
     margin: 0 !important;
@@ -9788,75 +9629,6 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
     margin: 5px 0 0;
     color: #999;
     font: 500 15px/22.5px var(--sans);
-  }
-  .live-teamCardHover {
-    position: absolute !important;
-    z-index: 5;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 199px !important;
-    padding: 49px 16px 18px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-end !important;
-    border-radius: 0 !important;
-    background: linear-gradient(180deg, transparent, #0a0a0a) !important;
-    opacity: 0;
-    filter: blur(18px);
-    overflow: hidden !important;
-    transition:
-      opacity 0.45s cubic-bezier(0.44, 0, 0.56, 1),
-      filter 0.45s cubic-bezier(0.44, 0, 0.56, 1);
-  }
-  .live-teamCardHover > div {
-    height: auto !important;
-    background: transparent !important;
-    overflow: visible !important;
-    border-radius: 0 !important;
-  }
-  .live-teamCardHover nav {
-    display: flex;
-    gap: 5px;
-    margin-top: 13px;
-  }
-  .live-teamCardHover a {
-    width: 37px;
-    height: 37px;
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
-    background: linear-gradient(#fff, #aaa);
-    color: #111;
-  }
-  .live-teamCardHover svg {
-    width: 23px;
-    height: 23px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  .live-teamGrid article:hover .live-teamCardInfo {
-    opacity: 0;
-  }
-  .live-teamGrid article:hover .live-teamCardHover {
-    opacity: 1;
-    filter: blur(0);
-  }
-  .live-aboutPage[data-about-state="hover"]
-    .live-teamGrid
-    article:first-child
-    .live-teamCardInfo {
-    opacity: 0;
-  }
-  .live-aboutPage[data-about-state="hover"]
-    .live-teamGrid
-    article:first-child
-    .live-teamCardHover {
-    opacity: 1;
-    filter: blur(0);
   }
   .live-teamCorners {
     position: absolute;
@@ -10374,7 +10146,7 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
   opacity: 1;
   will-change: transform;
 }
-.live-culture > .live-cultureStrip {
+.live-aboutPage > .live-cultureStrip {
   position: relative;
   z-index: 5;
   width: 100%;
@@ -10529,62 +10301,12 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
   filter: brightness(1.14) contrast(1.06);
   pointer-events: none;
 }
-.live-aboutPage .live-thinkerCopy,
-.live-aboutPage .live-thinkers footer {
+.live-aboutPage .live-thinkerCopy {
   position: relative;
   z-index: 2;
 }
-.live-aboutPage .live-thinkers footer {
-  border-top-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0 0 27px 27px;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(24, 24, 24, 0.7) 0%,
-      rgba(14, 14, 14, 0.86) 48%,
-      rgba(8, 8, 8, 0.94) 100%
-    ),
-    repeating-linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.012) 0,
-      rgba(255, 255, 255, 0.012) 1px,
-      transparent 1px,
-      transparent 7px
-    );
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 24px 42px rgba(255, 255, 255, 0.008),
-    0 24px 38px rgba(0, 0, 0, 0.28);
-}
-
-/* Cofounder panel spacing and separators. */
-.live-aboutPage .live-thinkers footer {
-  height: clamp(160px, 19.34vw, 198px);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-.live-aboutPage .live-thinkers footer span {
-  min-width: 0;
-  padding: clamp(28px, 3.91vw, 40px) clamp(18px, 5.08vw, 52px) 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-.live-aboutPage .live-thinkers footer span:last-child {
-  border-right: 0;
-}
-.live-aboutPage .live-thinkers footer .live-founderSignature {
-  width: min(241px, 100%);
-  height: 40px;
-  flex: 0 0 40px;
-}
-.live-aboutPage .live-thinkers footer b {
-  margin-top: clamp(20px, 2.64vw, 27px);
-}
-.live-aboutPage .live-thinkers footer small {
-  margin-top: 5px;
+.live-aboutPage .live-thinkers p:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 1199.98px) {
@@ -10597,8 +10319,8 @@ html[data-motion="paused"] .live-pricingPage .live-footerWave {
   .live-aboutPage .live-thinkersSurface {
     border-radius: clamp(16px, 2.34vw, 24px);
   }
-  .live-aboutPage .live-thinkers footer {
-    border-radius: 0 0 clamp(19px, 2.64vw, 27px) clamp(19px, 2.64vw, 27px);
+  .live-aboutPage .live-thinkerCopy {
+    padding-block: 48px;
   }
 }
 
@@ -10717,6 +10439,7 @@ html[data-motion="paused"] .live-kicker > i::before {
   object-fit: contain;
 }
 .live-foundingActions .live-darkButton {
+  width: min(185px, 100%);
   background: #303030 !important;
   color: #fff !important;
   box-shadow:
@@ -10749,43 +10472,10 @@ html[data-motion="paused"] .live-kicker > i::before {
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
     inset 0 14px 4px rgba(255, 255, 255, 0.02);
 }
-.live-teamCardHover a {
-  transition:
-    background-color 0.4s
-      linear(
-        0,
-        0.509 10%,
-        0.833 20%,
-        0.976 30%,
-        1.013 40%,
-        1.011 55%,
-        1.001 75%,
-        1
-      ),
-    color 0.4s
-      linear(
-        0,
-        0.509 10%,
-        0.833 20%,
-        0.976 30%,
-        1.013 40%,
-        1.011 55%,
-        1.001 75%,
-        1
-      );
-}
-.live-teamCardHover a:hover {
-  background: var(--brand);
-  color: #fff;
-  filter: none;
-  transform: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .live-faqContactExact > a,
   .live-worksViewButton,
-  .live-relatedLoadMore,
-  .live-teamCardHover a {
+  .live-relatedLoadMore {
     transition: none !important;
   }
 }

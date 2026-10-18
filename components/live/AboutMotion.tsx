@@ -8,7 +8,6 @@ import type { RouteMotionState } from "@/components/motion/control";
 type AboutState = "initial" | "revealed" | "hover" | "culture-revealed";
 
 const sourceEase = "cubic-bezier(.44,0,.56,1)";
-const hoverSpring = "linear(0,0.0794,0.2486,0.4375,0.6093,0.7484,0.8518,0.9231,0.9688,0.9954,1.0091,1.0144,1.015,1.0131,1.0104,1.0076,1.0051,1.0032,1.0018,1.0009,1.0003)";
 
 function isAboutState(value: string | null): value is AboutState {
   return value === "initial" || value === "revealed" || value === "hover" || value === "culture-revealed";
@@ -35,13 +34,11 @@ export function AboutMotion() {
     const initialState: AboutState = isAboutState(requestedState) ? requestedState : "revealed";
     const heroCopy = root.querySelectorAll<HTMLElement>("[data-about-hero-copy] > *");
     const founding = root.querySelectorAll<HTMLElement>("[data-about-founding]");
-    const thinkers = root.querySelectorAll<HTMLElement>("[data-about-thinker-photo]");
     const portraits = root.querySelectorAll<HTMLElement>("[data-about-team-portrait]");
     const cultureImages = root.querySelectorAll<HTMLElement>("[data-about-culture-image]");
     const cultureGlow = root.querySelectorAll<HTMLElement>("[data-about-culture-glow]");
     const rings = root.querySelectorAll<HTMLElement>("[data-about-ring]");
     const ruler = root.querySelector<HTMLElement>("[data-about-culture-ruler]");
-    const cards = Array.from(root.querySelectorAll<HTMLElement>("[data-team-card]"));
 
     const setRulerPhase = (phase: number) => {
       if (!ruler) return;
@@ -60,7 +57,7 @@ export function AboutMotion() {
     };
 
     const clearMotionProps = () => {
-      gsap.set([...heroCopy, ...founding, ...thinkers, ...portraits, ...cultureImages, ...cultureGlow], {
+      gsap.set([...heroCopy, ...founding, ...portraits, ...cultureImages, ...cultureGlow], {
         clearProps: "transform,opacity,filter",
       });
     };
@@ -89,7 +86,6 @@ export function AboutMotion() {
         const cultureRevealed = nextState !== "initial";
         root.dataset.aboutState = nextState;
         root.dataset.aboutMotion = "deterministic";
-        root.dataset.aboutHover = nextState === "hover" ? "0" : "none";
 
         gsap.set(heroCopy, {
           opacity: revealed ? 1 : 0,
@@ -98,7 +94,6 @@ export function AboutMotion() {
         });
         gsap.set(founding, { opacity: revealed ? 1 : 0, x: revealed ? 0 : 36, y: revealed ? 0 : 24 });
         if (founding[0]) gsap.set(founding[0], { x: revealed ? 0 : -36 });
-        gsap.set(thinkers, { opacity: revealed ? 1 : 0, x: 0, y: 0 });
         gsap.set(portraits, { opacity: revealed ? 1 : 0, scale: revealed ? 1 : 1.035 });
         gsap.set(cultureImages, { opacity: cultureRevealed ? 1 : 0, y: cultureRevealed ? 0 : 18, scale: cultureRevealed ? 1 : 1.025 });
         gsap.set(cultureGlow, { opacity: cultureRevealed ? .5 : 0, y: cultureRevealed ? -90 : 90, scale: cultureRevealed ? 1 : 1.08 });
@@ -124,7 +119,6 @@ export function AboutMotion() {
         if (ruler) delete ruler.dataset.motionPhase;
         delete root.dataset.aboutState;
         delete root.dataset.aboutMotion;
-        delete root.dataset.aboutHover;
       };
     }
 
@@ -166,15 +160,6 @@ export function AboutMotion() {
         scrollTrigger: { trigger: "[data-about-founding='right']", start: "top 65%", toggleActions: "play reverse play reverse" },
       });
 
-      gsap.fromTo("[data-about-thinker-photo='left']", { x: -48, y: 36, rotate: -8, opacity: 0 }, {
-        x: 0, y: 0, rotate: -11, opacity: 1, duration: 1, ease: sourceEase,
-        scrollTrigger: { trigger: "[data-section='about-us']", start: "top 62%", toggleActions: "play reverse play reverse" },
-      });
-      gsap.fromTo("[data-about-thinker-photo='right']", { x: 48, y: 36, rotate: 8, opacity: 0 }, {
-        x: 0, y: -164, rotate: 10, opacity: 1, duration: 1, delay: .1, ease: sourceEase,
-        scrollTrigger: { trigger: "[data-section='about-us']", start: "top 62%", toggleActions: "play reverse play reverse" },
-      });
-
       if (portraits.length) gsap.fromTo(portraits, { opacity: 0, scale: 1.035 }, {
         opacity: 1, scale: 1, duration: 1, stagger: .08, ease: sourceEase,
         scrollTrigger: { trigger: "[data-section='team']", start: "top 56%", toggleActions: "play reverse play reverse" },
@@ -185,7 +170,7 @@ export function AboutMotion() {
         scrollTrigger: { trigger: "[data-about-culture]", start: "top 68%", toggleActions: "play none none reverse" },
       });
 
-      gsap.fromTo(cultureGlow, { opacity: 0, y: 90, scale: 1.08 }, {
+      if (cultureGlow.length) gsap.fromTo(cultureGlow, { opacity: 0, y: 90, scale: 1.08 }, {
         opacity: .5, y: -90, scale: 1, ease: "none",
         scrollTrigger: { trigger: "[data-section='culture']", start: "top bottom", end: "bottom top", scrub: true },
       });
@@ -193,7 +178,7 @@ export function AboutMotion() {
       if (ruler) {
         ruler.style.animationPlayState = "paused";
         ScrollTrigger.create({
-          trigger: "[data-section='culture']",
+          trigger: ruler,
           start: "top bottom",
           end: "bottom top",
           onEnter: () => { ruler.style.animationPlayState = "running"; },
@@ -205,38 +190,6 @@ export function AboutMotion() {
       }
     }, root);
 
-    const cardAnimations = new Map<HTMLElement, Animation[]>();
-    const animateCard = (card: HTMLElement, hovered: boolean) => {
-      cardAnimations.get(card)?.forEach((animation) => animation.cancel());
-      const info = card.querySelector<HTMLElement>("[class*='teamCardInfo']");
-      const overlay = card.querySelector<HTMLElement>("[class*='teamCardHover']");
-      if (!info || !overlay) return;
-      const animations = [
-        info.animate([{ opacity: hovered ? 1 : 0 }, { opacity: hovered ? 0 : 1 }], { duration: 400, easing: hoverSpring, fill: "forwards" }),
-        overlay.animate(
-          [{ opacity: hovered ? 0 : 1, filter: hovered ? "blur(18px)" : "blur(0px)" }, { opacity: hovered ? 1 : 0, filter: hovered ? "blur(0px)" : "blur(18px)" }],
-          { duration: 400, easing: hoverSpring, fill: "forwards" },
-        ),
-      ];
-      cardAnimations.set(card, animations);
-      root.dataset.aboutHover = hovered ? card.dataset.teamCard ?? String(cards.indexOf(card)) : "none";
-      card.dataset.motionHover = String(hovered);
-    };
-    cards.forEach((card, index) => {
-      card.dataset.teamCard = String(index);
-      const enter = () => animateCard(card, true);
-      const leave = () => animateCard(card, false);
-      card.addEventListener("pointerenter", enter);
-      card.addEventListener("pointerleave", leave);
-      cleanups.push(() => {
-        card.removeEventListener("pointerenter", enter);
-        card.removeEventListener("pointerleave", leave);
-        cardAnimations.get(card)?.forEach((animation) => animation.cancel());
-        delete card.dataset.teamCard;
-        delete card.dataset.motionHover;
-      });
-    });
-
     const refreshFrame = requestAnimationFrame(() => ScrollTrigger.refresh());
     return () => {
       cancelAnimationFrame(refreshFrame);
@@ -245,7 +198,6 @@ export function AboutMotion() {
       clearMotionProps();
       delete root.dataset.aboutState;
       delete root.dataset.aboutMotion;
-      delete root.dataset.aboutHover;
       delete root.dataset.aboutRings;
     };
   }, []);

@@ -1,5 +1,5 @@
 ﻿import Link from "next/link";
-import { calLink, liveTeam, liveWorks, whatsappLink } from "@/lib/live-data";
+import { liveTeam, liveWorks, whatsappLink } from "@/lib/live-data";
 import { ContactHeroSection, ContactHeroTransition } from "./LiveContactHero";
 import { Benefits, PARTNER_LOGOS, PricingSection } from "./LiveHome";
 import {
@@ -14,6 +14,8 @@ import {
 import { LiveFeaturedWorks } from "./LiveFeaturedWorks";
 import { LiveAllWorks } from "./LiveAllWorks";
 import { AboutMotion } from "./AboutMotion";
+
+const SHOW_ABOUT_CULTURE = false;
 
 export function WorksPageLive() {
   const workCards = liveWorks.map((work) => ({
@@ -88,13 +90,13 @@ export function AboutPageLive() {
     "We started Unicode IT with a simple belief: technology should help businesses grow, scale, and compete more effectively.",
     "Today, digital product development often involves disconnected design, development, automation, and collaboration workflows that slow projects down.",
     "Our team has faced these challenges across different industries, from managing complex systems to maintaining performance, usability, and scalability.",
-    "Thatâ€™s why Unicode IT was built as a digital product and software development partner, helping businesses create custom software, web and mobile apps, SaaS platforms, and AI-powered solutions with clarity, speed, and long-term value.",
+    "That's why Unicode IT was built as a digital product and software development partner, helping businesses create custom software, web and mobile apps, SaaS platforms, and AI-powered solutions with clarity, speed, and long-term value.",
   ];
 
   const thinkerCopy = [
-    "At Unicode IT, we donâ€™t build digital products just to look impressive. We focus on clarity, usability, performance, and measurable business value. Every software, web, mobile, and UI/UX project is designed with purpose, scalability, and the end user in mind.",
+    "At Unicode IT, we don't build digital products just to look impressive. We focus on clarity, usability, performance, and measurable business value. Every software, web, mobile, and UI/UX project is designed with purpose, scalability, and the end user in mind.",
     "We believe great digital experiences should simplify complex problems, not create new ones. From custom software development to mobile apps and AI-powered solutions, our goal is to make every interaction intuitive, efficient, and aligned with real business objectives.",
-    "Too many digital products suffer from rushed development, inconsistent design, technical limitations, and systems that fail to scale. Weâ€™ve seen how unclear planning and disconnected workflows lead to costly revisions. Thatâ€™s why Unicode IT takes a more structured, strategic approach.",
+    "Too many digital products suffer from rushed development, inconsistent design, technical limitations, and systems that fail to scale. We've seen how unclear planning and disconnected workflows lead to costly revisions. That's why Unicode IT takes a more structured, strategic approach.",
     "We build complete digital systems, not just individual screens or features. Through thoughtful UI/UX design, scalable development, reliable technology, and structured workflows, we create digital products that can evolve with your business and support long-term growth.",
   ];
 
@@ -145,8 +147,8 @@ export function AboutPageLive() {
       >
         <img
           className="live-aboutTeamImage"
-          src="/assets/live/LjQl1b57p9r3QXIa0Tc9QhvrNvg.png"
-          alt="Aexo team collaborating"
+          src="/images/about/about hero image.png"
+          alt="Laptop showing software code beside a desk plant"
         />
         <img
           className="live-aboutHeroLowerGlow"
@@ -178,9 +180,7 @@ export function AboutPageLive() {
                 experiences with clarity, speed, and measurable impact.
               </p>
               <div className="live-foundingActions">
-                <LiveButton href="#" centered>
-                  Talk to founder
-                </LiveButton>
+                <LiveButton />
                 <LiveButton href="/contact" dark>
                   Contact Us
                 </LiveButton>
@@ -231,46 +231,12 @@ export function AboutPageLive() {
             src="/assets/live/gqQ3ffbzGqkzpuGyqYCz2zTVOYg.png"
             alt=""
           />
-          <ThinkerPencil className="live-thinkerPen" />
-          <ThinkerBolt className="live-thinkerBolt" />
-          <div
-            className={`live-thinkerPhoto live-thinkerPhotoLeft`}
-            data-about-thinker-photo="left"
-          >
-            <img
-              src="/assets/live/nII0o2cWuRfQlkk7QhjEB6e0WrI.png"
-              alt="Aexo founder sketching"
-            />
-            <img src="/assets/live/cHTZgik4Vy1CilWOawNxAXSJXw.png" alt="" />
-          </div>
-          <div
-            className={`live-thinkerPhoto live-thinkerPhotoRight`}
-            data-about-thinker-photo="right"
-          >
-            <img
-              src="/assets/live/2HBGAvA1eqd8eyuMbOj1WmF9Ieg.png"
-              alt="Aexo founder"
-            />
-            <img src="/assets/live/cHTZgik4Vy1CilWOawNxAXSJXw.png" alt="" />
-          </div>
           <div className="live-thinkerCopy">
             <h3>We Are Thinkers.</h3>
             {thinkerCopy.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <footer>
-            <span>
-              <FounderSignature kind="alex" />
-              <b>Alex Sameni</b>
-              <small>Cofounder</small>
-            </span>
-            <span>
-              <FounderSignature kind="paul" />
-              <b>Paul Johnson</b>
-              <small>Cofounder</small>
-            </span>
-          </footer>
         </article>
       </section>
       <section className="live-team" data-section="team">
@@ -290,7 +256,7 @@ export function AboutPageLive() {
         />
         <div className="live-teamGrid">
           {liveTeam.map((member, index) => (
-            <article key={member.name} data-team-card>
+            <article key={member.name}>
               <img
                 className="live-teamCardSurface"
                 src="/assets/live/brand-cyan/4Lsc1onyNrhirkTEeDjiaifcy8k.png"
@@ -312,29 +278,6 @@ export function AboutPageLive() {
                 <h3>{member.name}</h3>
                 <p>{member.role}</p>
               </div>
-              <div className="live-teamCardHover">
-                <div>
-                  <h3>{member.name}</h3>
-                  <p>{member.role}</p>
-                </div>
-                <nav aria-label={`${member.name} social links`}>
-                  <a
-                    href={member.links.instagram}
-                    aria-label={`${member.name} on Instagram`}
-                  >
-                    <TeamSocialIcon kind="instagram" />
-                  </a>
-                  <a href={member.links.x} aria-label={`${member.name} on X`}>
-                    <TeamSocialIcon kind="x" />
-                  </a>
-                  <a
-                    href={member.links.linkedin}
-                    aria-label={`${member.name} on LinkedIn`}
-                  >
-                    <TeamSocialIcon kind="linkedin" />
-                  </a>
-                </nav>
-              </div>
               <TeamCorners />
             </article>
           ))}
@@ -345,7 +288,7 @@ export function AboutPageLive() {
           alt=""
         />
       </section>
-      <section className="live-culture" data-section="culture">
+      {SHOW_ABOUT_CULTURE && <section className="live-culture" data-section="culture">
         <div className="live-aboutSectionTitle">
           <Kicker>Our Culture</Kicker>
           <h2>
@@ -391,33 +334,33 @@ export function AboutPageLive() {
             />
           </div>
         </div>
-        <div className="fix-introWaveRow live-cultureStrip" aria-hidden="true">
-          <div className="fix-introWaveViewport">
-            <div
-              className="fix-introWaveTrack"
-              data-about-culture-ruler
-              data-motion-loop="about-culture-ruler"
-            >
-              <img
-                className="fix-introWaveImage"
-                src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png"
-                alt=""
-              />
-              <img
-                className="fix-introWaveImage"
-                src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
         <img
           className="live-cultureGlow"
           data-about-culture-glow
           src="/assets/live/brand-cyan/J0CdaWzjawhE575G8LIv7rzAI.png"
           alt=""
         />
-      </section>
+      </section>}
+      <div className="fix-introWaveRow live-cultureStrip" aria-hidden="true">
+        <div className="fix-introWaveViewport">
+          <div
+            className="fix-introWaveTrack"
+            data-about-culture-ruler
+            data-motion-loop="about-culture-ruler"
+          >
+            <img
+              className="fix-introWaveImage"
+              src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png"
+              alt=""
+            />
+            <img
+              className="fix-introWaveImage"
+              src="/assets/live/sCElb0ycSJhVjPjM7nlsRGVqM.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
       <ScaleCTA />
     </main>
   );
@@ -440,95 +383,6 @@ function TeamCorners() {
       />
       <img src="/assets/live/brand-cyan/OAWptzoRWd2jPgU6OTKWx0YH0.png" alt="" />
     </span>
-  );
-}
-
-function TeamSocialIcon({ kind }: { kind: "instagram" | "x" | "linkedin" }) {
-  if (kind === "instagram")
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3" y="3" width="18" height="18" rx="4.5" />
-        <circle cx="12" cy="12" r="3.75" />
-        <circle cx="16.8" cy="7.2" r="1.1" fill="currentColor" />
-      </svg>
-    );
-  if (kind === "x")
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4.5 3.75H9l10.5 16.5H15L4.5 3.75Z" />
-        <path d="m10.7 13.45-6.2 6.8M19.5 3.75l-6.2 6.8" />
-      </svg>
-    );
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="3" y="3" width="18" height="18" rx=".75" />
-      <path d="M8.25 10.5v6M11.25 10.5v6m0-3.375a2.625 2.625 0 0 1 5.25 0V16.5" />
-      <circle cx="8.25" cy="7.875" r="1.125" fill="currentColor" />
-    </svg>
-  );
-}
-
-function ThinkerPencil({ className }: { className: string }) {
-  return (
-    <svg className={className} viewBox="0 0 130 100" aria-hidden="true">
-      <path
-        d="M27.78 69.344 29.625 48.621 76.294 5.421c4.299 0 8.846 1.583 12.967 4.134 3.593 2.225 6.862 5.187 9.36 8.479l-28.414 58.095-21.213 6.969-21.214 6.969Z"
-        fill="rgb(var(--brand-rgb) / 0.5)"
-        stroke="var(--brand)"
-        strokeWidth="3.76"
-      />
-      <path
-        d="m28.702 69.344 1.845-20.723 46.669-43.2c4.299 0 8.846 1.583 12.967 4.134 3.593 2.225 6.862 5.187 9.36 8.479M30.547 48.621c5.855-.45 12.486 1.198 18.699 4.26m-20.544 16.463-.922 20.723 21.214-6.969 21.213-6.969 32.927-48.831c-.688-3.158-2.296-6.341-4.513-9.264M49.246 52.881c5.179 2.553 10.069 6.088 13.978 10.212 3.723 3.926 6.556 8.385 7.905 13.036m-42.427-6.785s6.122 1.091 11.253 4.569 9.038 9.185 9.038 9.185m14.231-20.005 36.319-45.059M49.246 52.881 90.183 9.555"
-        fill="none"
-        stroke="#fff"
-        strokeWidth="2.4"
-      />
-    </svg>
-  );
-}
-
-function ThinkerBolt({ className }: { className: string }) {
-  return (
-    <svg className={className} viewBox="0 0 130 100" aria-hidden="true">
-      <path
-        d="m39.435 64.89 11.452-30.891h40.196l-7.901 16.99h19.656l-42.066 47.01L75.74 64.89Z"
-        fill="rgb(var(--brand-rgb) / 0.5)"
-        stroke="var(--brand)"
-        strokeWidth="3.35"
-      />
-      <path
-        d="m39.435 64.89 11.452-30.891h40.196l-7.901 16.99h19.656l-42.066 47.01L75.74 64.89Z"
-        fill="none"
-        stroke="#fff"
-        strokeWidth="2.14"
-      />
-    </svg>
-  );
-}
-
-function FounderSignature({ kind }: { kind: "alex" | "paul" }) {
-  return kind === "alex" ? (
-    <svg
-      className="live-founderSignature"
-      viewBox="0 0 241 40"
-      aria-hidden="true"
-    >
-      <path
-        transform="translate(20)"
-        d="M3 31c11-6 16-28 21-26 4 2-4 25 1 25 5 0 8-16 12-15 4 2-2 17 2 17 5 0 9-13 13-13 4 1-2 13 3 13 7 0 16-10 27-12"
-      />
-    </svg>
-  ) : (
-    <svg
-      className="live-founderSignature"
-      viewBox="0 0 241 40"
-      aria-hidden="true"
-    >
-      <path
-        transform="translate(20)"
-        d="M4 31C11 16 14 3 21 5c6 3-4 26 2 27 6 0 9-18 14-17 5 2-2 17 3 17 5 0 9-14 14-13 5 1-1 13 4 13 7 0 12-9 22-11"
-      />
-    </svg>
   );
 }
 
