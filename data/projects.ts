@@ -127,6 +127,8 @@ export const MEDITRUST_PROJECT_IMAGE = "/assets/projects/meditrust/heroImg.png";
 export const UNI_MAIL_HUB_PROJECT_IMAGE =
   "/assets/projects/uni-mail-hub/Uni Mail Hub Main.png";
 
+export const UNICRM_PROJECT_IMAGE = "/assets/projects/unicrm/UniCRM Main.png";
+
 export const projects = [
   {
     slug: "reborn-packaging",
@@ -635,10 +637,10 @@ export const projects = [
       },
     ],
     tags: [
+      "Mobile App Development",
+      "Cross-Platform App",
+      "API Integration",
       "Mobile Application",
-      "UI/UX Design",
-      "UX Research",
-      "Product Design",
     ],
     category: "UI/UX Design",
     region: "",
@@ -836,10 +838,10 @@ export const projects = [
       },
     ],
     tags: [
-      "UI/UX Design",
-      "Product Design",
-      "Mobile App Design",
-      "UX Research",
+      "Mobile App Development",
+      "Cross-Platform App",
+      "API Integration",
+      "Marketplace App",
     ],
     category: "UI/UX Design",
     region: "",
@@ -1332,7 +1334,7 @@ export const projects = [
         ],
       },
     ],
-    tags: ["UI/UX Design", "Product Design", "SaaS", "UX Research"],
+    tags: ["WordPress Plugin Development", "PHP", "JavaScript", "SaaS Plugin"],
     category: "UI/UX Design",
     region: "",
     year: "",
@@ -1654,7 +1656,7 @@ export const projects = [
         ],
       },
     ],
-    tags: ["UI/UX Design", "Product Design", "SaaS", "UX Research"],
+    tags: ["WordPress Plugin Development", "PHP", "JavaScript", "Form Builder"],
     category: "UI/UX Design",
     region: "",
     year: "",
@@ -2231,7 +2233,6 @@ export const projects = [
     slug: "meditrust",
     title:
       "MediTrust — Custom Ecommerce Development for a Multivendor Medical Equipment Marketplace",
-    showOnHomepage: false,
     detailLayout: "figma-longform",
     industry: ["Healthcare", "Ecommerce", "Medical Equipment Marketplace"],
     serviceCategory: [
@@ -2436,14 +2437,9 @@ export const projects = [
   {
     slug: "uni-mail-hub",
     title: "Uni Mail Hub — Centralized Transactional Email Infrastructure & Management Platform",
-    showOnHomepage: false,
     detailLayout: "figma-longform",
     industry: ["SaaS", "Email Infrastructure", "Developer Tools"],
-    serviceCategory: [
-      "Full-Stack Web Application Development",
-      "Backend Engineering",
-      "DevOps",
-    ],
+    serviceCategory: [],
     servicesProvided: [
       "System Architecture",
       "Backend Development",
@@ -2470,8 +2466,7 @@ export const projects = [
       "Production Deployment",
       "Multi-Project Integration",
     ],
-    liveUrl: "",
-    links: [],
+    liveUrl: "https://mailhub.unicodeit.com/",
     summary:
       "Uni Mail Hub is a centralized email infrastructure platform built to manage transactional and application-generated email across multiple Unicode IT products from one controlled system.",
     showInFeaturedSliders: false,
@@ -2653,6 +2648,313 @@ export const projects = [
     gallery: [],
   },
   {
+    slug: "unicrm",
+    title: "UniCRM — SaaS CRM, Lead Management & Business Automation Platform",
+    detailLayout: "figma-longform",
+    industry: ["SaaS", "CRM", "Sales Automation", "Business Operations"],
+    serviceCategory: [
+      "SaaS Product Development",
+      "Full-Stack Web Application Development",
+      "CRM Development",
+      "Business Automation",
+    ],
+    servicesProvided: [
+      "Product Architecture",
+      "SaaS Development",
+      "Backend Development",
+      "API Development",
+      "CRM Workflow Development",
+      "Lead Management",
+      "Customer Management",
+      "Pipeline Development",
+      "Automation Development",
+      "Web-to-Lead Integration",
+      "Dashboard Development",
+      "Background Worker Architecture",
+      "Database Design",
+      "Object Storage",
+      "Security & Access Control",
+      "Production Deployment",
+    ],
+    scopeOfWork: [
+      "CRM Architecture",
+      "Lead Capture",
+      "Contact Management",
+      "Customer Management",
+      "Sales Pipeline",
+      "Lead Lifecycle",
+      "Activity Tracking",
+      "Follow-Up Management",
+      "Web-to-Lead API",
+      "Business Automation",
+      "Workflow Automation",
+      "Background Jobs",
+      "Secure Inbound Integrations",
+      "PostgreSQL Data Layer",
+      "Redis Runtime/Queue Layer",
+      "MinIO Object Storage",
+      "Docker Deployment",
+      "Production Operations",
+      "External Product Integrations",
+    ],
+    liveUrl: "https://crm.unicodeit.com/",
+    summary:
+      "UniCRM is a SaaS customer relationship management and business automation platform built to help companies manage leads, customers, sales activity, follow-ups, and operational workflows from one centralized system.",
+    showInFeaturedSliders: false,
+    heroImage: UNICRM_PROJECT_IMAGE,
+    heroAspectRatio: "973 / 678",
+    problems: "",
+    solutions: [],
+    showcase: [],
+    detailBlocks: [
+      {
+        type: "copy",
+        title: "About the Project",
+        paragraphs: [
+          "UniCRM is a SaaS customer relationship management and business automation platform built to help companies manage leads, customers, sales activity, follow-ups, and operational workflows from one centralized system.",
+          "The product was designed for businesses across different industries rather than for one specific organization. Teams can use UniCRM to capture incoming opportunities, organize customer information, manage sales pipelines, track activities, automate repetitive CRM tasks, and connect external websites or applications through secure integrations.",
+          "A major goal was to make the CRM flexible enough to support different lead sources and business processes while keeping the user experience structured and manageable.",
+          "UniCRM also provides a secure Web-to-Lead integration model. External websites and applications can submit qualified lead information directly into the CRM through authenticated server-side requests. Unicode IT's own website is one example of this integration, but the same architecture can be reused by other businesses and applications.",
+          "The result is a standalone SaaS CRM platform that combines lead management, customer relationship workflows, integrations, and automation in one extensible system.",
+        ],
+      },
+      {
+        type: "copy",
+        title: "Problems",
+        paragraphs: [
+          "Many growing businesses manage leads and customer relationships using a mixture of spreadsheets, inboxes, contact forms, messaging tools, and disconnected applications.",
+          "This creates several operational problems:",
+        ],
+        bullets: [
+          "Leads from different websites and campaigns remain scattered across multiple systems.",
+          "Sales teams lack a single source of truth for customer and opportunity information.",
+          "Manual lead entry wastes time and increases the chance of missing or duplicating information.",
+          "Follow-up activity can become inconsistent between team members.",
+          "Sales pipelines are difficult to understand when status is maintained manually.",
+          "Repetitive CRM tasks consume time that could be automated.",
+          "Different businesses need different workflows rather than one rigid CRM process.",
+          "External websites need a secure way to send lead information directly into the CRM.",
+          "Integrations must keep private CRM credentials away from frontend/browser code.",
+          "Background tasks, automation, uploaded files, and CRM data require reliable production infrastructure.",
+          "As usage grows, the application must remain maintainable and extensible rather than becoming a collection of disconnected features.",
+        ],
+      },
+      {
+        type: "copy",
+        title: "Challenges",
+        groups: [
+          {
+            title: "SaaS & Product Architecture Challenges",
+            bullets: [
+              "Designing the CRM as a reusable SaaS product rather than a company-specific internal tool.",
+              "Creating CRM structures that can support different industries and business workflows.",
+              "Keeping lead, customer, activity, and pipeline information consistent across the application.",
+              "Designing features that remain understandable as the amount of CRM data grows.",
+              "Building the application so additional modules and integrations can be introduced later without rewriting the core system.",
+            ],
+          },
+          {
+            title: "CRM Workflow Challenges",
+            bullets: [
+              "Structuring the complete lead lifecycle from acquisition to follow-up and sales progression.",
+              "Giving teams a clear view of lead status and next actions.",
+              "Maintaining activity history and relevant context around customer records.",
+              "Supporting different lead sources while keeping data normalized.",
+              "Reducing repetitive manual work through automation without making workflows difficult to understand.",
+            ],
+          },
+          {
+            title: "Automation Challenges",
+            bullets: [
+              "Building automation into the CRM instead of treating it as a separate external tool.",
+              "Running automation/background work independently from normal web requests.",
+              "Ensuring automation does not block the primary application experience.",
+              "Making automated workflows reliable and maintainable in production.",
+              "Supporting future expansion of automation triggers/actions without tightly coupling them to individual pages.",
+            ],
+          },
+          {
+            title: "Integration Challenges",
+            bullets: [
+              "Building a reusable Web-to-Lead API for external websites and products.",
+              "Authenticating inbound requests securely.",
+              "Preventing integration secrets from being exposed to browsers.",
+              "Keeping external applications loosely coupled to UniCRM internals.",
+              "Preserving lead source/context when information enters the CRM.",
+              "Designing an integration model that can be reused by different companies and websites.",
+            ],
+          },
+          {
+            title: "Infrastructure Challenges",
+            bullets: [
+              "Separating web, API, and background-worker responsibilities.",
+              "Maintaining durable CRM records in PostgreSQL.",
+              "Supporting fast runtime/background operations through Redis.",
+              "Managing uploaded files/assets outside the relational database through MinIO.",
+              "Deploying multiple services consistently using containers.",
+              "Updating the SaaS platform without disrupting active integrations or background work.",
+            ],
+          },
+        ],
+      },
+      {
+        type: "image",
+        image: "/assets/projects/unicrm/UniCRM Body img.png",
+        alt: "UniCRM lead management table and pipeline overview",
+        aspectRatio: "973 / 678",
+      },
+      {
+        type: "copy",
+        title: "Our Solutions",
+        groups: [
+          {
+            title: "Centralized CRM Platform",
+            paragraphs: ["Built one system where businesses can manage leads, customers, opportunities, activities, and sales-related information instead of depending on disconnected tools."],
+          },
+          {
+            title: "Structured Lead Management",
+            paragraphs: ["Created a clear lead-management workflow that keeps incoming opportunities organized and makes their status easier for teams to understand."],
+          },
+          {
+            title: "Sales Pipeline Management",
+            paragraphs: ["Developed pipeline-oriented CRM workflows so businesses can track opportunities as they move through their sales process."],
+          },
+          {
+            title: "Customer & Contact Management",
+            paragraphs: ["Centralized important customer and contact information so teams can maintain the context required for ongoing relationships and follow-ups."],
+          },
+          {
+            title: "Activity & Follow-Up Tracking",
+            paragraphs: ["Connected activities and follow-up information to CRM records, helping teams maintain a clearer history of interactions and required actions."],
+          },
+          {
+            title: "CRM Automation",
+            paragraphs: [
+              "Added automation capabilities for repetitive CRM and business workflows.",
+              "Automation/background tasks are processed independently from normal page requests so they do not unnecessarily block user interactions.",
+              "Verified automation includes lead creation and stage-change triggers, task and follow-up creation, owner assignment, notifications, email, and webhook actions.",
+            ],
+          },
+          {
+            title: "Secure Web-to-Lead API",
+            paragraphs: ["Built a dedicated inbound endpoint that allows external websites and applications to create leads directly in UniCRM."],
+          },
+          {
+            title: "Server-Side Integration Security",
+            paragraphs: ["External integrations use private server-side credentials rather than exposing CRM secrets in browser code."],
+          },
+          {
+            title: "Reusable Integration Architecture",
+            paragraphs: ["Designed integrations so different websites/products can connect to UniCRM using a standardized API model instead of project-specific CRM code."],
+          },
+          {
+            title: "Background Worker Architecture",
+            paragraphs: ["Used dedicated worker processes for automation and other tasks that should execute independently from normal web/API requests."],
+          },
+          {
+            title: "PostgreSQL Data Layer",
+            paragraphs: ["Used PostgreSQL as the persistent relational data layer for CRM and business records."],
+          },
+          {
+            title: "Redis Runtime & Queue Infrastructure",
+            paragraphs: ["Used Redis for fast operational coordination and asynchronous/background-processing requirements."],
+          },
+          {
+            title: "MinIO Object Storage",
+            paragraphs: ["Integrated MinIO-compatible object storage for application files/assets that should remain separate from relational CRM records."],
+          },
+          {
+            title: "Dockerized Production Infrastructure",
+            paragraphs: ["Deployed UniCRM as isolated web, API, worker, PostgreSQL, and Redis services, with object storage configured separately."],
+          },
+          {
+            title: "SaaS-Ready Architecture",
+            paragraphs: ["Built UniCRM so the platform can continue evolving with additional CRM modules, integrations, automation workflows, and business features rather than remaining limited to a single organization's processes."],
+          },
+        ],
+      },
+      {
+        type: "copy",
+        title: "Technology Stack",
+        bullets: [
+          "Node.js / TypeScript",
+          "Next.js / React web application",
+          "NestJS API and worker",
+          "Prisma / PostgreSQL",
+          "Redis / BullMQ",
+          "MinIO-compatible object storage",
+          "Docker / Docker Compose",
+          "REST APIs and secure server-to-server integrations",
+        ],
+      },
+      {
+        type: "copy",
+        title: "Technology & Development Approach",
+        paragraphs: [
+          "UniCRM was developed as a standalone SaaS business platform.",
+          "Its architecture separates major responsibilities into independent layers/services:",
+        ],
+        bullets: [
+          "user-facing web application",
+          "backend/API layer",
+          "CRM/business logic",
+          "automation/background worker",
+          "relational data storage",
+          "runtime/queue infrastructure",
+          "object/file storage",
+          "external integration endpoints",
+        ],
+        closingParagraphs: [
+          "PostgreSQL provides durable relational storage for CRM data.",
+          "Redis supports runtime and asynchronous/background workloads.",
+          "MinIO provides object storage independently from the primary relational database.",
+          "Dedicated workers execute automation and background tasks separately from normal API requests.",
+          "External applications connect through secured REST/API integrations.",
+          "The Web-to-Lead implementation allows websites to submit lead information directly to UniCRM using a private server-side secret.",
+          "This architecture allows the CRM to remain independent from the external websites that use it while providing a standardized way for additional products and businesses to integrate in the future.",
+        ],
+      },
+      {
+        type: "copy",
+        title: "The Final Result",
+        paragraphs: [
+          "UniCRM has evolved into a reusable SaaS CRM and business automation platform rather than a CRM built for a single organization.",
+        ],
+        bulletsLabel: "The completed system provides:",
+        bullets: [
+          "centralized lead management",
+          "customer and contact management",
+          "structured sales workflows",
+          "pipeline-based opportunity tracking",
+          "activity and follow-up management",
+          "CRM/business automation",
+          "direct Web-to-Lead integration",
+          "secure server-to-server integrations",
+          "API-based connectivity with external applications",
+          "background worker processing",
+          "PostgreSQL-backed CRM data",
+          "Redis-powered runtime/background infrastructure",
+          "MinIO-backed object storage",
+          "Dockerized production deployment",
+          "an extensible foundation for additional CRM features and integrations",
+        ],
+        closingParagraphs: [
+          "Businesses can use UniCRM as their central system for managing incoming opportunities and customer relationships while connecting their own websites and applications to the same CRM infrastructure.",
+          "For Unicode IT, the company's website is one real production integration: contact-form data can be delivered directly to UniCRM through the secured Web-to-Lead API. The same model can be used by other businesses adopting the SaaS platform.",
+          "The result is less repetitive manual data entry, clearer sales operations, more consistent follow-up, greater workflow automation, and a scalable technical foundation that can support businesses across multiple industries.",
+        ],
+      },
+    ],
+    tags: ["SaaS CRM", "Lead Management", "Business Automation", "Full-Stack Development"],
+    category: "SaaS Product Development",
+    region: "",
+    year: "",
+    listing: UNICRM_PROJECT_IMAGE,
+    relatedImage: UNICRM_PROJECT_IMAGE,
+    cover: UNICRM_PROJECT_IMAGE,
+    gallery: [],
+  },
+  {
     slug: "leanier",
     title: "Leanier — UI/UX Design for a Lean-Thinking Productivity App",
     showOnHomepage: false,
@@ -2781,29 +3083,49 @@ export type ProjectSlug = (typeof projects)[number]["slug"];
 
 export const leadfexProject = {
   slug: "leadfex",
-  title: "LeadFex — B2B Lead Generation Website Design",
+  title: "LeadFex — B2B Lead Generation Web Development",
   listing: "/images/work/Leadfex.png",
   tags: [
-    "UI/UX Design",
-    "Website Design",
-    "Landing Page Design",
-    "SaaS Website",
+    "WordPress Development",
+    "Responsive Web Development",
+    "Lead Generation Website",
+    "SEO Optimization",
   ],
   category: "Website Design",
   region: "",
-  showOnHomepage: false,
   externalUrl: "https://leadfex.com/",
   hasDetailsPage: false,
 } as const satisfies ProjectListing;
 
+const portfolioFirstTen = [
+  "reborn-packaging",
+  "emlock",
+  "unicrm",
+  "uni-mail-hub",
+  "meditrust",
+  "leadfex",
+  "helpgent",
+  "formgent",
+  "directorist",
+  "al-quran",
+] as const;
+
+const portfolioRank = new Map<string, number>(
+  portfolioFirstTen.map((slug, index) => [slug, index]),
+);
+
 export const workListingProjects: readonly ProjectListing[] = [
   ...projects,
   leadfexProject,
-];
+].sort(
+  (left, right) =>
+    (portfolioRank.get(left.slug) ?? portfolioFirstTen.length) -
+    (portfolioRank.get(right.slug) ?? portfolioFirstTen.length),
+);
 
 export const homepageListingProjects = workListingProjects.filter(
   (project) => project.showOnHomepage !== false,
-);
+).slice(0, 10);
 
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);

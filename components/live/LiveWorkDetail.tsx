@@ -72,7 +72,7 @@ export function WorkDetailLive({ work }: { work: Project }) {
         <h1>{work.detailTitle ?? work.title}</h1>
         <dl className="live-workDetailInfo">
           <ProjectInfoItem label="Industry" values={work.industry} />
-          <ProjectInfoItem label="Service Category" values={work.serviceCategory} />
+          {work.serviceCategory.length > 0 && <ProjectInfoItem label="Service Category" values={work.serviceCategory} />}
           {work.servicesProvided.length > 0 && <ProjectInfoItem label="Service We Provided" values={work.servicesProvided} />}
           <ProjectInfoItem label="Scope of Work" values={work.scopeOfWork} />
           {(work.links ?? (work.liveUrl ? [{ label: "Visit website", url: work.liveUrl }] : [])).map((link) => <div className="live-workDetailInfoItem" key={link.url}><dt>Links</dt><dd><a href={link.url} target="_blank" rel="noopener noreferrer"><span>{link.label}</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" /></svg></a></dd></div>)}

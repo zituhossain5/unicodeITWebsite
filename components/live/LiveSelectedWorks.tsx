@@ -138,6 +138,7 @@ export function LiveSelectedWorks() {
               title={work.title}
               image={work.listing}
               tags={work.tags}
+              externalUrl={work.externalUrl}
               hoverHandlers={projectCursorHandlers}
             />
           ))}
